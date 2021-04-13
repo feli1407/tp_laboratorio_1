@@ -1,9 +1,10 @@
 /*
  * funcionescalculadora.c
  *
- *  Created on: 11 abr. 2021
+ *  Created on: 12 abr. 2021
  *      Author: Felipe Casco
  */
+
 int sumar(int a, int b)
 {
     return a + b;
@@ -42,4 +43,3 @@ int division(int a, int b, float* c)
 
     return todoOk;
 }
-

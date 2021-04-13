@@ -1,10 +1,10 @@
 /*
  ============================================================================
- Name        : TP1.c
- Author      : Felipe Casco Div 1A
+ Name        : trabajopractico1.c
+ Author      : Felipe Casco Div 1-A
  Version     :
  Copyright   :
- Description : Calculadora tp1
+ Description : Calculadora
  ============================================================================
  */
 
@@ -27,11 +27,11 @@ int main(void) {
             int resultadomultiplicacion=0;
             int facta=0;
             int factb=0;
-            int flagnumeroa=0;
-            int flagnumerob=0;
-            int flagresultados=0;
-            int flagfactorialx=0;
-            int flagfactorialy=0;
+            int flagnumeroa=0; //Flag si se ingreso 1er operando (1 si se ingreso, 0 si no se ingreso)
+            int flagnumerob=0; //Flag si se ingreso 2do operando (1 si se ingreso, 0 si no se ingreso)
+            int flagresultados=0; //Flag si se realizaron las operaciones (1 si se realizaron, 0 si no se realizaron)
+            int flagfactorialx=0; //Flag si se puede factorizar x (1 si se puede, 0 si no se puede)
+            int flagfactorialy=0; //Flag si se puede factorizar y (1 si se puede, 0 si no se puede)
 
 
 
@@ -73,12 +73,12 @@ int main(void) {
                         okDivision = division(x, y, &resultadodivision);
 
                         resultadomultiplicacion=multiplicacion(x,y);
-                        if(x>=0)
+                        if(x>=0) //Validacion de que x es diferente de 0 para poder factorizar
                         {
                             facta=factorial(x);
                             flagfactorialx=1;
                         }
-                        if(y>=0)
+                        if(y>=0) //Validacion de que y es diferente de 0 para poder factorizar
                         {
                             factb=factorial(y);
                             flagfactorialy=1;
@@ -125,7 +125,7 @@ int main(void) {
                         }
 
 
-
+                        //Se reinician los operandos y los flags por si el usuario desea realizar mas operaciones
                         x=0;
                         y=0;
                         flagnumeroa=0;

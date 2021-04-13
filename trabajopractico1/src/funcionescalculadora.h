@@ -1,7 +1,7 @@
 /*
  * funcionescalculadora.h
  *
- *  Created on: 11 abr. 2021
+ *  Created on: 12 abr. 2021
  *      Author: Felipe Casco
  */
 
