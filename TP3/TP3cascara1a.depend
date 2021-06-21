@@ -1,0 +1,95 @@
+# depslib dependency file v1.0
+1624311718 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp3cascara1a\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"funciones.h"
+
+1624313899 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp3cascara1a\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"funciones.h"
+	"parser.h"
+
+1623798614 c:\users\felipe\onedrive\escritorio\codeblocks\tp3cascara1a\linkedlist.h
+
+1623897826 c:\users\felipe\onedrive\escritorio\codeblocks\tp3cascara1a\employee.h
+
+1623898297 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp3cascara1a\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+
+1624311412 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp3cascara1a\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1624310846 c:\users\felipe\onedrive\escritorio\codeblocks\tp3cascara1a\controller.h
+
+1623993138 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp3cascara1a\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"funciones.h"
+
+1623993311 c:\users\felipe\onedrive\escritorio\codeblocks\tp3cascara1a\funciones.h
+
+1624312230 c:\users\felipe\onedrive\escritorio\codeblocks\tp3cascara1a\parser.h
+
+1624313899 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp3\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"funciones.h"
+	"parser.h"
+
+1623798614 c:\users\felipe\onedrive\escritorio\codeblocks\tp3\linkedlist.h
+
+1623897826 c:\users\felipe\onedrive\escritorio\codeblocks\tp3\employee.h
+
+1623993311 c:\users\felipe\onedrive\escritorio\codeblocks\tp3\funciones.h
+
+1624312230 c:\users\felipe\onedrive\escritorio\codeblocks\tp3\parser.h
+
+1623898297 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp3\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+
+1623993138 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp3\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"funciones.h"
+
+1624311718 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"funciones.h"
+
+1624310846 c:\users\felipe\onedrive\escritorio\codeblocks\tp3\controller.h
+
+1624311412 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp3\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+
