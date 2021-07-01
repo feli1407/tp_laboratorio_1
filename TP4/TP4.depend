@@ -1,0 +1,54 @@
+# depslib dependency file v1.0
+1625068202 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp4\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"funciones.h"
+	"parser.h"
+
+1625097164 c:\users\felipe\onedrive\escritorio\codeblocks\tp4\linkedlist.h
+
+1623897826 c:\users\felipe\onedrive\escritorio\codeblocks\tp4\employee.h
+
+1623993311 c:\users\felipe\onedrive\escritorio\codeblocks\tp4\funciones.h
+
+1624312230 c:\users\felipe\onedrive\escritorio\codeblocks\tp4\parser.h
+
+1623898297 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp4\employee.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"Employee.h"
+
+1623993138 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp4\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"funciones.h"
+
+1625097151 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp4\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1625062366 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp4\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1625105248 source:c:\users\felipe\onedrive\escritorio\codeblocks\tp4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"funciones.h"
+
+1624310846 c:\users\felipe\onedrive\escritorio\codeblocks\tp4\controller.h
+
