@@ -17,7 +17,7 @@
 int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
 {
     int todoOk=0;
-    FILE* f;//inicializar en NULL
+    FILE* f = NULL;
     if(path!=NULL && pArrayListEmployee!=NULL)
     {
         if((f = fopen(path, "r")) != NULL)
@@ -49,7 +49,7 @@ int controller_loadFromText(char* path, LinkedList* pArrayListEmployee)
 int controller_loadFromBinary(char* path, LinkedList* pArrayListEmployee)
 {
     int todoOk=0;
-    FILE* f;//inicializar en NULL
+    FILE* f = NULL;
     if(path!=NULL && pArrayListEmployee!=NULL)
     {
         if((f = fopen(path, "rb")) != NULL)
@@ -85,114 +85,16 @@ int controller_addEmployee(LinkedList* pArrayListEmployee)
 
     if(pArrayListEmployee!=NULL)
     {
-        auxId=ll_len(pArrayListEmployee)+1;
-        itoa(auxId,buffer[1],20);
+        auxId=ll_len(pArrayListEmployee)+6;
+        printf("ID del nuevo empleado: %d\n",auxId);
+        itoa(auxId,buffer[1],10);
         getString(buffer[2],20,"Ingrese nombre: ","Error, ",5);
-        getNumerosEnChar(buffer[3],20,"Ingrese horas trabajadas: ","Error, ",5);
-        getNumerosEnChar(buffer[4],20,"Ingrese sueldo: ","Error, ",5);
+        getNumerosEnChar(buffer[3],20,"Ingrese horas trabajadas(1-500): ","Error, ",5);
+        getNumerosEnChar(buffer[4],20,"Ingrese sueldo(100-150000): ","Error, ",5);
         nuevoEmpleado=employee_newParametros(buffer[1],buffer[2],buffer[3],buffer[4]);
         ll_add(pArrayListEmployee,nuevoEmpleado);
         printf("Empleado cargado con exito!\n");
         todoOk=1;
-    }
-    return todoOk;
-}
-
-/** \brief Modificar datos de empleado
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
-int controller_editEmployee(LinkedList* pArrayListEmployee)
-{
-    Employee* auxEmpleado;
-    int todoOk=0;
-    int horas;
-    int sueldo;
-    int len;
-    int retornoId;
-    char nombre[20];
-    int auxId;
-
-    if (pArrayListEmployee!=NULL)
-    {
-        len=ll_len(pArrayListEmployee);
-        getNumero(&auxId,"Ingrese ID: ","Error, ",1,5000,5);
-
-        for(int i=0; i<len; i++)
-        {
-            auxEmpleado=ll_get(pArrayListEmployee,i);
-            employee_getId(auxEmpleado,&retornoId);
-
-            if (auxId==retornoId)
-            {
-                getString(nombre,20,"Ingrese nombre: ","Error, ",5);
-                strcpy(auxEmpleado->nombre,nombre);
-
-                getNumero(&horas,"Ingrese horas trabajadas: ","Error, ",1,500,5);
-                auxEmpleado->horasTrabajadas=horas;
-
-                getNumero(&sueldo,"Ingrese sueldo: ","Error, ",1,200000,5);
-                auxEmpleado->sueldo=sueldo;
-
-                printf("Empleado modificado con exito!\n");
-                todoOk=1;
-                break;
-            }
-        }
-    }
-    return todoOk;
-}
-
-/** \brief Baja de empleado
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
-int controller_removeEmployee(LinkedList* pArrayListEmployee)
-{
-    Employee* auxEmpleado;
-    int todoOk=0;
-    int auxId;
-    int len;
-    int retornoId;
-    char respuesta;
-
-    len=ll_len(pArrayListEmployee);
-    getNumero(&auxId,"Ingrese ID: ","Error, ",1,5000,5);
-
-    if(pArrayListEmployee!=NULL)
-    {
-        for(int i=0; i<len; i++)
-        {
-            auxEmpleado=ll_get(pArrayListEmployee,i);
-            employee_getId(auxEmpleado,&retornoId);
-
-            if (auxId==retornoId)
-            {
-                printf("***EMPLEADO A ELIMINAR***");
-                printf("\n  ID    Nombre   Horas   Sueldo \n\n");
-                printf("%4d  %20s %20d %20d \n",auxEmpleado->id,auxEmpleado->nombre,auxEmpleado->horasTrabajadas,auxEmpleado->sueldo);
-                printf("Desea eliminar este empleado de forma permanente?(s o n)");
-                fflush(stdin);
-                scanf("%c",&respuesta);
-                if (respuesta=='s')
-                {
-                    ll_remove(pArrayListEmployee,i);
-                    employee_delete(auxEmpleado);
-                    printf("Dato eliminado de manera exitosa\n");
-                    break;
-                }
-                else
-                {
-                    printf("El dato no se elimino\n");
-                }
-            }
-        }
     }
     return todoOk;
 }
@@ -227,6 +129,107 @@ int controller_ListEmployee(LinkedList* pArrayListEmployee)
             printf("%4d  %20s %20d %20d \n",auxId,auxNombre,auxHorasDeTrabajo,auxSueldo);
         }
         todoOk=1;
+    }
+    return todoOk;
+}
+
+/** \brief Modificar datos de empleado
+ *
+ * \param path char*
+ * \param pArrayListEmployee LinkedList*
+ * \return int
+ *
+ */
+int controller_editEmployee(LinkedList* pArrayListEmployee)
+{
+    Employee* auxEmpleado;
+    int todoOk=0;
+    int horas;
+    int sueldo;
+    int len;
+    int retornoId;
+    char nombre[20];
+    int auxId;
+
+    if (pArrayListEmployee!=NULL)
+    {
+        len=ll_len(pArrayListEmployee);
+        controller_ListEmployee(pArrayListEmployee);
+        getNumero(&auxId,"Ingrese ID: ","Error, ",1,5000,5);
+
+        for(int i=0; i<len; i++)
+        {
+            auxEmpleado=ll_get(pArrayListEmployee,i);
+            employee_getId(auxEmpleado,&retornoId);
+
+            if (auxId==retornoId)
+            {
+                getString(nombre,20,"Ingrese nombre: ","Error, ",5);
+                strcpy(auxEmpleado->nombre,nombre);
+
+                getNumero(&horas,"Ingrese horas trabajadas(1-500): ","Error, ",1,500,5);
+                auxEmpleado->horasTrabajadas=horas;
+
+                getNumero(&sueldo,"Ingrese sueldo(100-150000): ","Error, ",1,200000,5);
+                auxEmpleado->sueldo=sueldo;
+
+                printf("Empleado modificado con exito!\n");
+                todoOk=1;
+                break;
+            }
+        }
+    }
+    return todoOk;
+}
+
+/** \brief Baja de empleado
+ *
+ * \param path char*
+ * \param pArrayListEmployee LinkedList*
+ * \return int
+ *
+ */
+int controller_removeEmployee(LinkedList* pArrayListEmployee)
+{
+    Employee* auxEmpleado;
+    int todoOk=0;
+    int auxId;
+    int len;
+    int retornoId;
+    char respuesta;
+
+    len=ll_len(pArrayListEmployee);
+    controller_ListEmployee(pArrayListEmployee);
+    getNumero(&auxId,"Ingrese ID: ","Error, ",1,5000,5);
+
+    if(pArrayListEmployee!=NULL)
+    {
+        for(int i=0; i<len; i++)
+        {
+            auxEmpleado=ll_get(pArrayListEmployee,i);
+            employee_getId(auxEmpleado,&retornoId);
+
+            if (auxId==retornoId)
+            {
+                printf("***EMPLEADO A ELIMINAR***");
+                printf("\n  ID    Nombre   Horas   Sueldo \n\n");
+                printf("%4d  %20s %20d %20d \n",auxEmpleado->id,auxEmpleado->nombre,auxEmpleado->horasTrabajadas,auxEmpleado->sueldo);
+                printf("Desea eliminar este empleado de forma permanente?(s o n)");
+                fflush(stdin);
+                scanf("%c",&respuesta);
+                if (respuesta=='s')
+                {
+                    ll_remove(pArrayListEmployee,i);
+                    employee_delete(auxEmpleado);
+                    printf("Dato eliminado de manera exitosa\n");
+                    break;
+                }
+                else
+                {
+                    printf("El dato no se elimino\n");
+                }
+            }
+        }
     }
     return todoOk;
 }

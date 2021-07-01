@@ -39,7 +39,7 @@ int parser_EmployeeFromText(FILE* pFile, LinkedList* pArrayListEmployee)
         }
         while(!feof(pFile));
 
-        printf("La carga de datos se realizod de manera exitosa!\n\n");
+        printf("La carga de datos se realizo de manera exitosa!\n");
         todoOk=1;
     }
     else
@@ -80,7 +80,7 @@ int parser_EmployeeFromBinary(FILE* pFile, LinkedList* pArrayListEmployee)
             }
             else
             {
-                printf("Carga exitosa.\n\n");
+                printf("Carga exitosa.\n");
                 todoOk = 1;
             }
         }

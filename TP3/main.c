@@ -25,6 +25,7 @@
 int main()
 {
     int option = 0;
+    int flag = 0;//Si no se cargan los empleados desde el archivo de texto o binario, no se puede agregar, modificar o remover ninguno
 
     LinkedList* listaEmpleados = ll_newLinkedList();
 
@@ -35,24 +36,61 @@ int main()
         {
         case 1:
             controller_loadFromText("data.csv",listaEmpleados);
+            flag = 1;
             break;
         case 2:
             controller_loadFromBinary("dataB.csv",listaEmpleados);
+            flag = 1;
             break;
         case 3:
-            controller_addEmployee(listaEmpleados);
+            if(flag == 1)
+            {
+                controller_addEmployee(listaEmpleados);
+            }
+            else
+            {
+                printf("Primero debe cargar los empleados con la opcion 1 o 2.\n");
+            }
             break;
         case 4:
-            controller_editEmployee(listaEmpleados);
+            if(flag == 1)
+            {
+                controller_editEmployee(listaEmpleados);
+            }
+            else
+            {
+                printf("Primero debe cargar los empleados con la opcion 1 o 2.\n");
+            }
             break;
         case 5:
-            controller_removeEmployee(listaEmpleados);
+            if(flag == 1)
+            {
+                controller_removeEmployee(listaEmpleados);
+            }
+            else
+            {
+                printf("Primero debe cargar los empleados con la opcion 1 o 2.\n");
+            }
             break;
         case 6:
-            controller_ListEmployee(listaEmpleados);
+            if(flag == 1)
+            {
+                controller_ListEmployee(listaEmpleados);
+            }
+            else
+            {
+                printf("Primero debe cargar los empleados con la opcion 1 o 2.\n");
+            }
             break;
         case 7:
-            controller_sortEmployee(listaEmpleados);
+            if(flag == 1)
+            {
+                controller_sortEmployee(listaEmpleados);
+            }
+            else
+            {
+                printf("Primero debe cargar los empleados con la opcion 1 o 2.\n");
+            }
             break;
         case 8:
             controller_saveAsText("data.csv",listaEmpleados);

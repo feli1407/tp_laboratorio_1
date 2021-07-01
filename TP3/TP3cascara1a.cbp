@@ -44,6 +44,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="funciones.h" />
+		<Unit filename="libLinkedList.a" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
